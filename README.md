@@ -1,4 +1,4 @@
-# d2admin
+# admin
 
 > A Vue.js project
 
