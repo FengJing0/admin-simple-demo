@@ -13,17 +13,6 @@ import '@/assets/library/font-awesome-4.7.0/css/font-awesome.min.css'
 // vuex
 import store from '@/store/index.js'
 
-// 代码高亮主题
-
-// markdown主题
-
-// simplemde css
-
-// svg图标
-
-// mock接口设置
-import '@/mock/register'
-
 // 全局注册的组件
 import '@/components'
 
@@ -38,9 +27,7 @@ Vue.prototype.$env = process.env.NODE_ENV === 'development'
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
   router,
   store,
-  components: { App },
-  template: '<App/>'
-})
+  render: h => h(App)
+}).$mount('#app')

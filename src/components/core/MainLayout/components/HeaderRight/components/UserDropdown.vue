@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import Cookies from 'js-cookie'
 export default {
   methods: {
     active (name) {
@@ -25,7 +24,6 @@ export default {
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
-        Cookies.remove('token')
         this.$router.push({
           name: 'login'
         })

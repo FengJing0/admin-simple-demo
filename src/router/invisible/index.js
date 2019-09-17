@@ -2,7 +2,7 @@ export default [
   {
     path: '/demo',
     // component: () => import('@/components/core/MainLayout/index'),
-    meta: {requiresAuth: true},
+    meta: { requiresAuth: true },
     redirect: {
       name: 'index'
     }
@@ -13,7 +13,7 @@ export default [
     component: () => import('@/pages/core/login/index')
   },
   {
-    path: '404',
+    path: '/404',
     name: 'index-notFount',
     component: () => import('@/pages/core/NotFount/index')
   },

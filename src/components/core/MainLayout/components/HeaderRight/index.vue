@@ -1,6 +1,7 @@
 <template>
   <div class="btn-group">
     <FullScreen></FullScreen>
+    &nbsp;&nbsp;
     <UserDropdown></UserDropdown>
   </div>
 </template>

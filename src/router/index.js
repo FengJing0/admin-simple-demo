@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import invisible from './invisible'
-import Cookies from 'js-cookie'
 
 import * as menu from './menu'
 
@@ -17,13 +16,14 @@ let router = new Router({
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth) {
-    if (Cookies.get('token')) {
-      next()
-    } else {
-      next({
-        name: 'login'
-      })
-    }
+    next()
+    // if (login) {
+    //   next()
+    // } else {
+    //   next({
+    //     name: 'login'
+    //   })
+    // }
   } else {
     next()
   }

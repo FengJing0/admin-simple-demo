@@ -1,32 +1,48 @@
 <template>
   <div class="login-page">
-    <div id="login" class="layer bg"></div>
+    <div id="login"
+         class="layer bg"></div>
     <div class="flex-center">
       <div class="logo-group">
-        <img src="@/assets/image/logo/w500.png" alt="">
+        <img src="@/assets/image/logo/w500.png"
+             alt="">
       </div>
       <div class="form-group">
         <el-card>
-          <el-form :model="formLogin" :rules="rules" ref="loginForm">
-            <el-form-item  prop="username">
-              <el-input type="text" v-model="formLogin.username" placeholder="用户名">
-                <i slot="prepend" class="fa fa-user-circle-o"></i>
+          <el-form :model="formLogin"
+                   :rules="rules"
+                   ref="loginForm">
+            <el-form-item prop="username">
+              <el-input type="text"
+                        v-model="formLogin.username"
+                        placeholder="用户名">
+                <i slot="prepend"
+                   class="fa fa-user-circle-o"></i>
               </el-input>
             </el-form-item>
             <el-form-item prop="password">
-              <el-input type="password" v-model="formLogin.password" placeholder="密码">
-                <i slot="prepend" class="fa fa-keyboard-o"></i>
+              <el-input type="password"
+                        v-model="formLogin.password"
+                        placeholder="密码">
+                <i slot="prepend"
+                   class="fa fa-keyboard-o"></i>
               </el-input>
             </el-form-item>
             <el-form-item prop="code">
-              <el-input type="text" v-model="formLogin.code" placeholder="请输入验证码">
+              <el-input type="text"
+                        v-model="formLogin.code"
+                        placeholder="请输入验证码">
                 <span slot="prepend">验证码</span>
                 <span slot="append">
-                  <img class="login-code" src="static/image/login-code.png" alt="">
+                  <img class="login-code"
+                       src="static/image/login-code.png"
+                       alt="">
                 </span>
               </el-input>
             </el-form-item>
-            <el-button @click="submit" type="primary" class="button-login">登陆</el-button>
+            <el-button @click="submit"
+                       type="primary"
+                       class="button-login">登陆</el-button>
           </el-form>
         </el-card>
       </div>
@@ -36,7 +52,7 @@
 
 <script>
 import config from './config/default'
-import Cookies from 'js-cookie'
+// import Cookies from 'js-cookie'
 // 配置地址
 // https://vincentgarreau.com/particles.js/#default
 require('particles.js')
@@ -50,9 +66,9 @@ export default {
         code: 'v9am'
       },
       rules: {
-        username: {required: true, message: '请输入用户名', trigger: 'blur'},
-        password: {required: true, message: '请输入密码', trigger: 'blur'},
-        code: {required: true, message: '请输入验证码', trigger: 'blur'}
+        username: { required: true, message: '请输入用户名', trigger: 'blur' },
+        password: { required: true, message: '请输入密码', trigger: 'blur' },
+        code: { required: true, message: '请输入验证码', trigger: 'blur' }
       }
     }
   },
@@ -69,15 +85,15 @@ export default {
               code: this.formLogin.code
             }
           }).then(res => {
-            const setting = {
-              expires: 1
-            }
+            // const setting = {
+            //   expires: 1
+            // }
             // Cookies设置
             // 不要像下面这样写 请改写为你的保存用户逻辑
             // 保存用户名密码 不等于真正保存到了本地
             // Cookies.set('username', res.username, setting)
             // Cookies.set('password', res.password, setting)
-            Cookies.set('token', res.token, setting)
+            // Cookies.set('token', res.token, setting)
             this.$router.push({
               name: 'index'
             })
@@ -95,7 +111,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/style/public.scss';
+@import "@/assets/style/public.scss";
 .login-page {
   background-color: $color-primary;
   height: 100%;
@@ -108,8 +124,8 @@ export default {
   }
   .flex-center {
     position: absolute;
-    left:50%;
-    top:50%;
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
@@ -138,7 +154,8 @@ export default {
     width: 300px;
     // 重新设置卡片阴影
     .el-card {
-      box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5);
+      box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
+        0 2px 4px 0 rgba(232, 237, 250, 0.5);
       .el-card__body {
         padding-top: 70px;
       }
